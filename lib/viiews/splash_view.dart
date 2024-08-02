@@ -1,10 +1,12 @@
-// ignore_for_file: unnecessary_import
+// ignore_for_file: unnecessary_import, prefer_const_constructors, avoid_unnecessary_containers
 
 import 'package:bookstore/constants/colors_constants.dart';
 import 'package:bookstore/viiews/login_view.dart';
 import 'package:bookstore/widgets/custom_button.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+
+import 'signup_view.dart';
 
 class SplashView extends StatefulWidget {
   const SplashView({super.key});
@@ -62,6 +64,12 @@ class _SplashViewState extends State<SplashView> {
               height: 54,
             ),
             CustomButton(
+              onTap: () => Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => SignupView(),
+                ),
+              ),
               text: 'Create an account',
               onPressed: () {},
               backgroundColor: Colors.white,
@@ -69,6 +77,12 @@ class _SplashViewState extends State<SplashView> {
               borderColor: true,
             ),
             CustomButton(
+              onTap: () => Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => LoginView(),
+                ),
+              ),
               text: 'Log in as a guest',
               onPressed: () {},
               backgroundColor: primaryColor,

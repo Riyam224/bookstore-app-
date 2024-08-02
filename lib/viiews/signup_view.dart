@@ -2,13 +2,14 @@
 
 import 'package:bookstore/constants/colors_constants.dart';
 import 'package:bookstore/viiews/home_view.dart';
-import 'package:bookstore/viiews/signup_view.dart';
-import 'package:bookstore/widgets/custom_button.dart';
+import 'package:bookstore/viiews/login_view.dart';
 import 'package:bookstore/widgets/custom_text_field.dart';
 import 'package:flutter/material.dart';
 
-class LoginView extends StatelessWidget {
-  const LoginView({super.key});
+import '../widgets/custom_button.dart';
+
+class SignupView extends StatelessWidget {
+  const SignupView({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -26,19 +27,37 @@ class LoginView extends StatelessWidget {
             height: 55,
           ),
           CustomTextField(
-            hintText: 'username',
+            hintText: 'Jane Doe',
             suffixIcon: Icon(Icons.remove),
           ),
-          SizedBox(
+          const SizedBox(
             height: 5,
           ),
           CustomTextField(
-            hintText: 'password',
+            hintText: 'janedoe',
+            suffixIcon: Icon(
+              Icons.verified_user,
+            ),
+          ),
+          const SizedBox(
+            height: 5,
+          ),
+          CustomTextField(
+            hintText: 'jane@gmail.com',
             suffixIcon: Icon(
               Icons.visibility_off,
             ),
           ),
-          SizedBox(
+          const SizedBox(
+            height: 5,
+          ),
+          CustomTextField(
+            hintText: '********',
+            suffixIcon: Icon(
+              Icons.visibility_off,
+            ),
+          ),
+          const SizedBox(
             height: 30,
           ),
           CustomButton(
@@ -48,7 +67,7 @@ class LoginView extends StatelessWidget {
                       builder: (context) => HomeView(),
                     ),
                   ),
-              text: 'Log in',
+              text: 'sign up',
               onPressed: () {},
               backgroundColor: primaryColor,
               textColor: Colors.white,
@@ -59,16 +78,15 @@ class LoginView extends StatelessWidget {
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Text('Don’t have an account yet? '),
+              Text('Already have an account '),
               GestureDetector(
-                onTap: () => Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) => SignupView(),
-                  ),
-                ),
+                onTap: () {
+                  Navigator.push(context, MaterialPageRoute(builder: (context) {
+                    return LoginView();
+                  }));
+                },
                 child: Text(
-                  'Sign up here',
+                  'Login',
                   style: TextStyle(
                     color: primaryColor,
                   ),
