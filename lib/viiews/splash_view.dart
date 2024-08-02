@@ -64,27 +64,27 @@ class _SplashViewState extends State<SplashView> {
               height: 54,
             ),
             CustomButton(
-              onTap: () => Navigator.push(
-                context,
-                MaterialPageRoute(
-                  builder: (context) => SignupView(),
-                ),
-              ),
               text: 'Create an account',
-              onPressed: () {},
+              onPressed: () {
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => SignupView(),
+                    ));
+              },
               backgroundColor: Colors.white,
               textColor: Colors.black,
               borderColor: true,
             ),
             CustomButton(
-              onTap: () => Navigator.push(
-                context,
-                MaterialPageRoute(
-                  builder: (context) => LoginView(),
-                ),
-              ),
               text: 'Log in as a guest',
-              onPressed: () {},
+              onPressed: () {
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => LoginView(),
+                    ));
+              },
               backgroundColor: primaryColor,
               textColor: Colors.white,
               borderColor: true,

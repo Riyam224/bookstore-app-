@@ -12,7 +12,7 @@ class CustomButton extends StatelessWidget {
     required this.backgroundColor,
     required this.textColor,
     required this.borderColor,
-    required this.onTap,
+    // required this.onTap,
   });
 
   final String text;
@@ -22,36 +22,33 @@ class CustomButton extends StatelessWidget {
   final bool borderColor;
   // todo
 
-  final GestureTapCallback onTap;
+  // final GestureTapCallback onTap;
 
   @override
   Widget build(BuildContext context) {
-    return GestureDetector(
-      onTap: onTap,
-      child: Padding(
-        padding: const EdgeInsets.only(
-          left: 16,
-          right: 16,
-          bottom: 20,
-        ),
-        child: Container(
-          width: 340,
-          height: 60,
-          decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(10),
-              color: backgroundColor,
-              border: Border.all(
-                color: borderColor ? Colors.white : primaryColor,
-              )),
-          child: TextButton(
-            onPressed: onPressed,
-            child: Text(
-              text,
-              style: TextStyle(
-                color: textColor,
-                fontSize: 18,
-                fontWeight: FontWeight.w500,
-              ),
+    return Padding(
+      padding: const EdgeInsets.only(
+        left: 16,
+        right: 16,
+        bottom: 20,
+      ),
+      child: Container(
+        width: 340,
+        height: 60,
+        decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(10),
+            color: backgroundColor,
+            border: Border.all(
+              color: borderColor ? Colors.white : primaryColor,
+            )),
+        child: TextButton(
+          onPressed: onPressed,
+          child: Text(
+            text,
+            style: TextStyle(
+              color: textColor,
+              fontSize: 18,
+              fontWeight: FontWeight.w500,
             ),
           ),
         ),

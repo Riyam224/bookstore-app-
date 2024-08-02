@@ -1,6 +1,7 @@
-// ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
+// ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables, avoid_unnecessary_containers
 
 import 'package:bookstore/constants/colors_constants.dart';
+import 'package:bookstore/models/category_image_model.dart';
 import 'package:bookstore/viiews/home_view.dart';
 import 'package:bookstore/viiews/signup_view.dart';
 import 'package:bookstore/widgets/custom_button.dart';
@@ -42,14 +43,11 @@ class LoginView extends StatelessWidget {
             height: 30,
           ),
           CustomButton(
-              onTap: () => Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) => HomeView(),
-                    ),
-                  ),
               text: 'Log in',
-              onPressed: () {},
+              onPressed: () {
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => HomeView()));
+              },
               backgroundColor: primaryColor,
               textColor: Colors.white,
               borderColor: true),

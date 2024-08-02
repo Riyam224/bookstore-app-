@@ -1,4 +1,4 @@
-// ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
+// ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables, avoid_unnecessary_containers
 
 import 'package:bookstore/constants/colors_constants.dart';
 import 'package:bookstore/viiews/home_view.dart';
@@ -61,14 +61,14 @@ class SignupView extends StatelessWidget {
             height: 30,
           ),
           CustomButton(
-              onTap: () => Navigator.push(
+              text: 'sign up',
+              onPressed: () {
+                Navigator.push(
                     context,
                     MaterialPageRoute(
                       builder: (context) => HomeView(),
-                    ),
-                  ),
-              text: 'sign up',
-              onPressed: () {},
+                    ));
+              },
               backgroundColor: primaryColor,
               textColor: Colors.white,
               borderColor: true),
